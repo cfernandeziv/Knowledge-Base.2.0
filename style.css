@@ -1,0 +1,35 @@
+.btn-group {
+    margin-right: 1rem; 
+    margin-top: 30px;
+}
+  
+.btn-group:last-child {
+    margin-right: 0;
+}
+
+#start-button {
+    margin-top: 30px;
+}
+
+.card-group {
+    margin-top: 50px;
+}
+
+.container-contact {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    margin-top: 10;
+}
+
+.navbar-brand.h1 {
+    color: black; 
+    font-weight: bold;
+    margin-right: 100%;
+    
+}
+
+.card-img-top {
+    margin-top: 30px;
+}

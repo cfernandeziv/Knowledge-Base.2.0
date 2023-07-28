@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<HTML lang="en" data-bs-theme="">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./style.css"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<title>Test</title>
+
+
+
+</head>
+
+<body>
+    <!-- As a heading -->
+
+    <nav class="navbar bg-secondary px-2 py-4">
+        <div class="container-fluid">
+            <img src="./images/logo-innova.webp" alt="Innova-logo" />
+        <span class="navbar-brand h1" >Innova Knowledge Base</span>
+        </div>
+    </nav>
+
+
+<!-- Adding a spacer element -->
+
+
+
+<!-- Large "Innova Tools" button groups (default and split) -->
+<div class="container-button px-4 py-5">
+
+    <h5 class="message"> To choose the Innova Tool and Reason Category, simply select the respective Tabs. Once you're done, click 'Search' to proceed. </h5>
+    <div class="btn-group">
+        <button id="innovaToolButton" class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Innova Tools
+        </button>
+        <select id="tool" class="dropdown-menu" onchange="updateToolSelection(event)">
+            <option value="">Select a Tool</option>
+            <option value="1000">1000</option>
+            <option value="5010">5010</option>
+            <option value="5110">5110</option>
+            <option value="5210">5210</option>
+            <option value="5310">5310</option>
+            <option value="5410">5410</option>
+            <option value="5510">5510</option>
+            <option value="5512">5512</option>
+            <option value="5610">5610</option>
+        </select>
+    
+    </div>
+
+
+<!-- Large "Reason Category" button groups (default and split) -->
+
+    <div class="btn-group">
+        <button id="reasonCategoryButton" class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Reason Category
+        </button>
+        <select id="reason" class="dropdown-menu" onchange="checkSelection(event)">
+            <option value="">Select a Reason</option>
+            <option value="how-to-run-data-capture">How to run Data Capture</option>
+            <option value="how-to-replace-batteries">How to replace batteries</option>
+            <option value="how-to-change-tool-language">How to change tool language</option>
+        </select>
+    </div>
+
+
+  <button id="start-button" type="button" class="btn btn-primary btn-lg" onclick="startSearch()" disabled>Search</button>
+
+
+</div>
+
+
+    <div class="card-group px-4 py-5 justify-content-center"> 
+
+       
+
+        <div class="card">
+            <img src="./images/inbox.svg" class="card-img-top" alt="inbox" height="30">
+            <div class="card-body">
+            <h5 class="card-title">Update Note 1</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="./images/inbox.svg" class="card-img-top" alt="inbox" height="30">
+            <div class="card-body">
+            <h5 class="card-title">Update Note 2</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="card-footer">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="./images/inbox.svg" class="card-img-top" alt="inbox" height="30">
+            <div class="card-body">
+            <h5 class="card-title">Update Note 3</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            </div>
+            <div class="card-footer">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+        </div>
+    
+    </div>
+    
+
+
+  
+    <form action="https://formsubmit.co/david.garcia@innova.com" method="POST" class="container-contact px-4 py-5">
+        <div class="vstack gap-3">
+            <div class="p-2">
+                <h5>Please fill in the following...</h5>
+            </div>
+    
+            <div class="p-2">
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="text" name="first_name" class="form-control" placeholder="First name" aria-label="First name" required>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="last_name" class="form-control" placeholder="Last name" aria-label="Last name" required>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="p-2">
+                <div class="col">
+                    <input type="text" name="tech_note_number" class="form-control" placeholder="Tech Note Number" aria-label="Tech Note Number" required>
+                </div>
+            </div>
+    
+            <div class="p-2">
+                <div class="col">
+                    <input type="text" name="tool_part_number" class="form-control" placeholder="Tool Part Number" aria-label="Tool Part Number" required>
+                </div>
+            </div>
+    
+            <div class="p-2">
+                <div class="row mb-3">
+                    <div class="col-sm-10">
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="p-2"> Please be brief and detailed with the information you have come across.</div>
+    
+            <div class="mb-3">
+                <label for="validationTextarea" class="form-label"></label>
+                <textarea class="form-control" id="validationTextarea" name="message" placeholder="Please type detailed message" required></textarea>
+            </div>
+    
+            <button class="btn btn-primary" type="submit">Submit</button>
+
+        </div>
+    </form>
+    
+
+    
+    
+<div class="container">
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+      <div class="col mb-3">
+        <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+        <p class="text-body-secondary">© 2023</p>
+      </div>
+  
+      <div class="col mb-3">
+  
+      </div>
+  
+      <div class="col mb-3">
+        <h5>Innova Knowledge Base</h5>
+        
+      </div>
+  
+      
+    </footer>
+  </div>
+  
+    <script>
+
+        function updateToolSelection(event) {
+            var selectedTool = event.target.value;
+            var selectToolButton = document.getElementById('innovaToolButton');
+            selectToolButton.innerHTML = 'Innova Tool: ' + selectedTool;
+            checkSelection();
+        }
+ 
+
+
+        function checkSelection(event) {
+            var tool = document.getElementById("tool").value;
+            var reason = document.getElementById("reason").value;
+            var startButton = document.getElementById("start-button");
+
+            if (tool && reason) {
+                startButton.disabled = false;
+                startButton.classList.add("ready");
+            } else {
+                startButton.disabled = true;
+                startButton.classList.remove("ready");
+            }
+
+            var selectedReason = document.getElementById("reason").value;
+            var reasonCategoryButton = document.getElementById("reasonCategoryButton");
+            reasonCategoryButton.innerHTML = 'Reason Category: ' + (selectedReason ? selectedReason : 'Select a Reason');
+        }
+
+        function startSearch() {
+            var tool = document.getElementById("tool").value;
+            var reason = document.getElementById("reason").value;
+            var pdfUrl = getPDFUrl(tool, reason);
+            if (pdfUrl) {
+                window.open(pdfUrl, "_blank");
+                resetSelection();
+            }
+        }
+
+        function resetSelection() {
+            document.getElementById("reason").selectedIndex = 0;
+            document.getElementById("tool").selectedIndex = 0;
+            var selectToolButton = document.getElementById('innovaToolButton');
+            selectToolButton.innerHTML = 'Innova Tool';
+            checkSelection();
+        }
+
+        function getPDFUrl(tool, reason) {
+            // Customize this function to return the appropriate PDF URL based on the selected tool and reason
+            var pdfFiles = {
+                "5010": {
+                    "how-to-run-data-capture": "./PDF-Folder/How to Report an Issue.pdf"
+                },
+                "5110": {
+                    "how-to-replace-batteries": "./How to replace batteries.pdf"
+                },
+                "5210": {
+                    "how-to-replace-batteries": "./How to replace batteries.pdf"
+                }
+                // Add more tool and reason mappings as needed
+            };
+
+            if (pdfFiles.hasOwnProperty(tool) && pdfFiles[tool].hasOwnProperty(reason)) {
+                var filePath = pdfFiles[tool][reason];
+                return filePath + '#page=1';
+            } else {
+                return null;
+            }
+        }
+
+    </script>
+
+
+
+
+
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+</body>
+</HTML>
